@@ -7,7 +7,9 @@ suppressPackageStartupMessages({
   library(ggrepel)
 })
 
-path <- "/raw/DiffPeaksD0D25_droppedduplicates.csv"
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+path <- "./raw/D0D25_dropped_duplicates.csv"
+
 # Import data  ------------------------------------------------------------
 results <- read.csv(path, header = TRUE)
 # Format data  ------------------------------------------------------------
@@ -30,29 +32,24 @@ results <- mutate(results, sig = case_when(
   pval < 0.1 & log2fc > 0.58 ~ up,
   pval < 0.1 & log2fc < -0.58 ~ down,
   TRUE ~ notsig))
-write.csv(results, "/raw/volcano.csv")
+write.csv(results, "./out/volcano.csv")
 
 
 # Specify genes to label --------------------------------------------------
 
 ## Extract into vector ##
-# USE THIS METHOD TO ADD CUSTOM GENE LABELS
+
 custlabels <- c("ESRP1", "L1TD1", "TDGF1", "VRTN", "CER1", "EEF1E1", "DPPA4", "CUZD1", "HES5", "BICD1", "SIX3", "DCT", "MKRN3")
-# USE THIS METHOD TO ADD GENE LABELS BASED ON TOP n GENES IN order_by CATEGORY
-top <- slice_min(results, order_by = pval, n = 30)
-toplabels <- pull(top, labels)
-toplabels <- c(toplabels, custlabels)
-#print(toplabels)
 
 # Label just the top genes in results table
 
-results <- mutate(results, labels = ifelse(labels %in% toplabels, labels, ""))
+results <- mutate(results, labels = ifelse(labels %in% custlabels, labels, ""))
 
 
 # Create plot -------------------------------------------------------------
 
 # Open file to save plot as PDF
-pdf(file="/raw/volcano.pdf", width=7,height=7)
+pdf(file="./out/volcano.pdf", width=7,height=7)
 
 # Set up base plot
 p <- ggplot(data = results, aes(x = log2fc, y = -log10(pval))) +
