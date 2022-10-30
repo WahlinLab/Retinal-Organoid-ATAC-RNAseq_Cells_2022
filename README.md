@@ -2,7 +2,7 @@
 
 This repository contains code used for quality control and data analysis presented in: 
 
-> **Melissa K. Jones; Devansh Agarwal; Kevin W. Mazo; Manan Chopra; Shawna L. Jurlina; Nicholas Dash; Qianlan Xu; Anna R. Ogata; Melissa Chow; Alex D. Hill; Netra K. Kambli; Guorong Xu; Roman Sasik; Amanda Birmingham; Kathleen M. Fisch; Robert N. Weinreb; Ray A. Enke; Dorota Skowronska-Krawczyk; Karl J. Wahlin. Chromatin accessibility and transcriptional differences in human stem cell-derived earlystage retinal organoids. Cells 2022 (in press).**
+> **Jones, M.K.; Agarwal, D.; Mazo, K.W.; Chopra, M.; Jurlina, S.L.; Dash, N.; Xu, Q.; Ogata, A.R.; Chow, M.; Hill, A.D.; Kambli, N.K.; Xu, G.; Sasik, R.; Birmingham, A.; Fisch, K.M.; Weinreb, R.N.; Enke, R.A.; Skowronska-Krawczyk, D.; Wahlin, K.J. Chromatin Accessibility and Transcriptional Differences in Human Stem Cell-Derived Early-Stage Retinal Organoids. Cells 2022, 11, 3412. https://doi.org/10.3390/cells11213412 **
 
 ----
 
